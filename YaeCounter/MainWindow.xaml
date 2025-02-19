@@ -22,6 +22,7 @@
                 <Button x:Name ="countup" Margin ="5,5,5,5" HorizontalAlignment="Left" Width = "200" Height ="40" FontSize = "20" Content="カウントアップ" CommandParameter="{Binding Command, ElementName=button}" ClickMode="Press" Click="countup_Click"/>
                 <Button x:Name ="countdown" Margin ="5,5,5,5" HorizontalAlignment="Left" Width = "200" Height ="40" FontSize = "20" Content="カウントダウン" CommandParameter="{Binding Command, ElementName=button}" ClickMode="Press" Click="countdown_Click"/>
             </StackPanel>
+            <Button x:Name ="reset" Margin ="5,5,5,5" HorizontalAlignment="Left" Width = "200" Height ="40" FontSize = "18" Content="本日死亡回数リセット" CommandParameter="{Binding Command, ElementName=button}" ClickMode="Press" Click="reset_Click"/>
             <Button x:Name ="save" Margin ="5,5,5,5" HorizontalAlignment="Left" Width = "200" Height ="40" FontSize = "20" Content="セーブ" CommandParameter="{Binding Command, ElementName=button}" ClickMode="Press" Click="save_Click"/>
 
             <Grid Width="450" Height="100" Margin="5,20,5,5">
@@ -39,7 +40,6 @@
                 <StackPanel>
                     <TextBlock Margin ="5,5,5,5" HorizontalAlignment="Left" Width = "200" Height ="40" FontSize = "20" Text = "修正欄"/>
                     <StackPanel Orientation="Horizontal" >
-                        <!--<TextBox IsReadOnly="True" Margin ="5,5,5,5" HorizontalAlignment="Left" Width = "200" Height ="40" FontSize = "20" Text = "{Binding bossname}"/>-->
                         <TextBlock Margin ="5,5,5,5" HorizontalAlignment="Left" Width = "200" Height ="40" FontSize = "20" Text = "本日死亡回数"/>
                         <TextBox Margin ="5,5,5,5" HorizontalAlignment="Left" Width = "200" Height ="40" FontSize = "20" Text = "{Binding current}"/>
                     </StackPanel>

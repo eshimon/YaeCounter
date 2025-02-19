@@ -131,4 +131,20 @@ public partial class MainWindow : Window
         }
 
     }
+
+    private void reset_Click(object sender, RoutedEventArgs e)
+    {
+        try
+        {
+            vm.current = 0;
+        }
+        catch
+        {
+            MessageBox.Show("エラーが発生しました。強制終了します。",
+                "error",
+                MessageBoxButton.OK,
+                MessageBoxImage.Error);
+            Application.Current.Shutdown();
+        }
+    }
 }
