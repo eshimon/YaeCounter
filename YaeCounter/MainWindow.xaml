@@ -1,0 +1,56 @@
+﻿<Window x:Class="YaeCounter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:YaeCounter"
+        mc:Ignorable="d"
+        Title="YaeDeathCounter" Height="700" Width="500">
+    <Grid>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal" >
+                <TextBlock Width = "200" FontSize = "20" Text="本日死亡回数" VerticalAlignment="Center" HorizontalAlignment="Center"
+               Foreground="Black" Margin="5,5,5,5" IsHitTestVisible="False" />
+                <TextBox IsReadOnly="True" Margin ="5,5,5,5" HorizontalAlignment="Left" Width = "200" Height ="40" FontSize = "20" Text = "{Binding current}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" >
+                <TextBlock Width = "200" FontSize = "20" Text="通算死亡回数" VerticalAlignment="Center" HorizontalAlignment="Center"
+               Foreground="Black" Margin="5,5,5,5" IsHitTestVisible="False" />
+                <TextBox IsReadOnly="True" Margin ="5,5,5,5" HorizontalAlignment="Left" Width = "200" Height ="40" FontSize = "20" Text = "{Binding total}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" >
+                <Button x:Name ="countup" Margin ="5,5,5,5" HorizontalAlignment="Left" Width = "200" Height ="40" FontSize = "20" Content="カウントアップ" CommandParameter="{Binding Command, ElementName=button}" ClickMode="Press" Click="countup_Click"/>
+                <Button x:Name ="countdown" Margin ="5,5,5,5" HorizontalAlignment="Left" Width = "200" Height ="40" FontSize = "20" Content="カウントダウン" CommandParameter="{Binding Command, ElementName=button}" ClickMode="Press" Click="countdown_Click"/>
+            </StackPanel>
+            <Button x:Name ="save" Margin ="5,5,5,5" HorizontalAlignment="Left" Width = "200" Height ="40" FontSize = "20" Content="セーブ" CommandParameter="{Binding Command, ElementName=button}" ClickMode="Press" Click="save_Click"/>
+
+            <Grid Width="450" Height="100" Margin="5,20,5,5">
+                <Border BorderBrush="Silver" BorderThickness="1"></Border>
+                <StackPanel>
+                    <TextBlock Margin ="5,5,5,5" HorizontalAlignment="Left" Width = "200" Height ="40" FontSize = "20" Text = "テキスト"/>
+                    <TextBox IsReadOnly="True" Margin ="5,0,5,5" HorizontalAlignment="Center" Width = "400" Height ="40" FontSize = "20" 
+                     VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text = "{Binding copytext}"/>
+                </StackPanel>
+            </Grid>
+
+
+            <Grid Width="450" Height="170" Margin="5,20,5,5">
+                <Border BorderBrush="Silver" BorderThickness="1"></Border>
+                <StackPanel>
+                    <TextBlock Margin ="5,5,5,5" HorizontalAlignment="Left" Width = "200" Height ="40" FontSize = "20" Text = "修正欄"/>
+                    <StackPanel Orientation="Horizontal" >
+                        <!--<TextBox IsReadOnly="True" Margin ="5,5,5,5" HorizontalAlignment="Left" Width = "200" Height ="40" FontSize = "20" Text = "{Binding bossname}"/>-->
+                        <TextBlock Margin ="5,5,5,5" HorizontalAlignment="Left" Width = "200" Height ="40" FontSize = "20" Text = "本日死亡回数"/>
+                        <TextBox Margin ="5,5,5,5" HorizontalAlignment="Left" Width = "200" Height ="40" FontSize = "20" Text = "{Binding current}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" >
+                        <TextBlock Margin ="5,5,5,5" HorizontalAlignment="Left" Width = "200" Height ="40" FontSize = "20" Text = "通算死亡回数"/>
+                        <TextBox Margin ="5,5,5,5" HorizontalAlignment="Left" Width = "200" Height ="40" FontSize = "20" Text = "{Binding total}"/>
+                    </StackPanel>
+                </StackPanel>
+
+            </Grid>
+
+        </StackPanel>
+    </Grid>
+</Window>
